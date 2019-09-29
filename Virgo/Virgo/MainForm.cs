@@ -43,5 +43,15 @@ namespace Virgo
             TimerDayLabel.Text  = nowTime.ToString("yyyy年 MM月 dd日 (ddd)");
             TimerTimeLabel.Text = nowTime.ToLongTimeString();
         }
+
+        private void StartWorkButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FinishWorkButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
