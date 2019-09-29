@@ -37,9 +37,9 @@
             this.FinishWorkButton = new System.Windows.Forms.Button();
             this.Lasted20DataGridView = new System.Windows.Forms.DataGridView();
             this.Lasted20Label = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoundRecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Lasted20DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,9 +97,9 @@
             this.Lasted20DataGridView.AllowUserToResizeRows = false;
             this.Lasted20DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Lasted20DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
+            this.RecordDate,
+            this.RoundRecordDate,
+            this.ToWork});
             this.Lasted20DataGridView.Location = new System.Drawing.Point(12, 209);
             this.Lasted20DataGridView.MultiSelect = false;
             this.Lasted20DataGridView.Name = "Lasted20DataGridView";
@@ -118,23 +118,32 @@
             this.Lasted20Label.TabIndex = 4;
             this.Lasted20Label.Text = "最近20件の登録";
             // 
-            // Column1
+            // RecordDate
             // 
-            this.Column1.HeaderText = "登録日時";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.RecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.RecordDate.DataPropertyName = "RecordDate";
+            this.RecordDate.HeaderText = "登録日時";
+            this.RecordDate.Name = "RecordDate";
+            this.RecordDate.ReadOnly = true;
+            this.RecordDate.Width = 78;
             // 
-            // Column2
+            // RoundRecordDate
             // 
-            this.Column2.HeaderText = "丸め日時";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.RoundRecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.RoundRecordDate.DataPropertyName = "RoundRecordDate";
+            this.RoundRecordDate.HeaderText = "丸め日時";
+            this.RoundRecordDate.Name = "RoundRecordDate";
+            this.RoundRecordDate.ReadOnly = true;
+            this.RoundRecordDate.Width = 76;
             // 
-            // Column3
+            // ToWork
             // 
-            this.Column3.HeaderText = "出勤/退勤";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.ToWork.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ToWork.DataPropertyName = "ToWork";
+            this.ToWork.HeaderText = "出勤/退勤";
+            this.ToWork.Name = "ToWork";
+            this.ToWork.ReadOnly = true;
+            this.ToWork.Width = 84;
             // 
             // MainForm
             // 
@@ -167,9 +176,10 @@
         private System.Windows.Forms.Button FinishWorkButton;
         private System.Windows.Forms.DataGridView Lasted20DataGridView;
         private System.Windows.Forms.Label Lasted20Label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoundRecordDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
     }
 }
 

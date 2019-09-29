@@ -12,10 +12,13 @@ namespace Virgo
 {
     public partial class MainForm : Form
     {
+        private DataTable Table;
+
         public MainForm()
         {
             InitializeComponent();
             DBSetup();
+            InitDataTable();
             CountTimer.Start();
         }
 
@@ -32,9 +35,36 @@ namespace Virgo
             }
         }
 
+        /// <summary>
+        /// DataTableの初期セットアップを行う
+        /// </summary>
+        private void InitDataTable()
+        {
+            Table = new DataTable();
+            Table.Columns.Add("RecordDate"     , typeof(string));
+            Table.Columns.Add("RoundRecordDate", typeof(string));
+            Table.Columns.Add("ToWork"         , typeof(string));
+            Lasted20DataGridView.DataSource = Table;
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //読み込み時のフォームセットアップ
+            GetLastedRecord();
+        }
+
+        private void GetLastedRecord()
+        {
+            string errMes = "";
+            List<DaoAttendance> daoAttendanceList = new List<DaoAttendance>();
+            errMes = DaoAttendance.SelectAll(ref daoAttendanceList, 20);
+            if (errMes == "")
+            {
+                SetDataTable(daoAttendanceList);
+            }
+            else
+            {
+                MessageBox.Show(errMes);
+            }
         }
 
         private void CountTimer_Tick(object sender, EventArgs e)
@@ -74,7 +104,44 @@ namespace Virgo
             else
             {
                 MessageBox.Show("登録を完了しました。", "勤怠登録");
+                GetLastedRecord();                
             }
+        }
+
+        /// <summary>
+        /// DataGridViewに受け取ったリストを反映する
+        /// </summary>
+        /// <param name="daoAttendanceList">勤怠テーブルのデータリスト</param>
+        private void SetDataTable(List<DaoAttendance> daoAttendanceList)
+        {
+            Table.Clear();
+            foreach (DaoAttendance attendance in daoAttendanceList)
+            {
+                DataRow row = Table.NewRow();
+                row["RecordDate"]      = attendance.recordDate;
+                row["RoundRecordDate"] = attendance.roundRecordDate;
+                row["ToWork"]          = GetRecordStatus(attendance.toWork);
+                Table.Rows.Add(row);
+            }
+        }
+
+        /// <summary>
+        /// ToWorkの数値ステータスをラベルに変換する
+        /// </summary>
+        /// <param name="statusCode">数値ステータス</param>
+        /// <returns>対応するラベルテキスト</returns>
+        private string GetRecordStatus(long statusCode)
+        {
+            string retStr = "";
+            if (statusCode == 1)
+            {
+                retStr = "出勤";
+            }
+            else if (statusCode == 2)
+            {
+                retStr = "退勤";
+            }
+            return retStr;
         }
     }
 }

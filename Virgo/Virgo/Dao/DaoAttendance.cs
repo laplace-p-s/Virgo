@@ -14,7 +14,7 @@ namespace Virgo
 
         public string recordDate;
         public string roundRecordDate;
-        public int    toWork;
+        public long   toWork;
 
         public DaoAttendance()
         {
@@ -45,6 +45,53 @@ namespace Virgo
 
                         cmd.CommandText = sql.ToString();
                         cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                errMes = e.ToString();
+            }
+
+            return errMes;
+        }
+
+        /// <summary>
+        /// 記録日付の新しいデータを上限付きで取得
+        /// </summary>
+        /// <param name="daoAttendanceList">結果受け取りリスト</param>
+        /// <param name="limit">LIMIT句で指定する行数</param>
+        /// <returns>エラーメッセージ 正常終了の場合空文字</returns>
+        public static string SelectAll(ref List<DaoAttendance> daoAttendanceList, int limit)
+        {
+            string errMes = "";
+            try
+            {
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=" + DB_FILE_NAME))
+                {
+                    con.Open();
+                    using (SQLiteCommand cmd = con.CreateCommand())
+                    {
+                        StringBuilder sql = new StringBuilder();
+                        sql.AppendLine("SELECT");
+                        sql.AppendLine(" *");
+                        sql.AppendLine("FROM " + TABLE_NAME);
+                        sql.AppendLine("ORDER BY");
+                        sql.AppendLine(" record_date DESC");
+                        sql.AppendLine("LIMIT " + limit);
+
+                        cmd.CommandText = sql.ToString();
+                        SQLiteDataReader reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            DaoAttendance attendance = new DaoAttendance();
+                            attendance.recordDate      = reader.GetFieldValue<string>(reader.GetOrdinal("record_date"));
+                            attendance.roundRecordDate = reader.GetFieldValue<string>(reader.GetOrdinal("round_record_date"));
+                            attendance.toWork          = reader.GetFieldValue<long>  (reader.GetOrdinal("to_work"));
+
+                            daoAttendanceList.Add(attendance);
+                        }
                     }
                 }
             }
