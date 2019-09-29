@@ -35,6 +35,12 @@
             this.CountTimer = new System.Windows.Forms.Timer(this.components);
             this.StartWorkButton = new System.Windows.Forms.Button();
             this.FinishWorkButton = new System.Windows.Forms.Button();
+            this.Lasted20DataGridView = new System.Windows.Forms.DataGridView();
+            this.Lasted20Label = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Lasted20DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // TimerDayLabel
@@ -83,11 +89,60 @@
             this.FinishWorkButton.UseVisualStyleBackColor = true;
             this.FinishWorkButton.Click += new System.EventHandler(this.FinishWorkButton_Click);
             // 
+            // Lasted20DataGridView
+            // 
+            this.Lasted20DataGridView.AllowUserToAddRows = false;
+            this.Lasted20DataGridView.AllowUserToDeleteRows = false;
+            this.Lasted20DataGridView.AllowUserToResizeColumns = false;
+            this.Lasted20DataGridView.AllowUserToResizeRows = false;
+            this.Lasted20DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Lasted20DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.Lasted20DataGridView.Location = new System.Drawing.Point(12, 209);
+            this.Lasted20DataGridView.MultiSelect = false;
+            this.Lasted20DataGridView.Name = "Lasted20DataGridView";
+            this.Lasted20DataGridView.ReadOnly = true;
+            this.Lasted20DataGridView.RowHeadersVisible = false;
+            this.Lasted20DataGridView.RowTemplate.Height = 21;
+            this.Lasted20DataGridView.Size = new System.Drawing.Size(345, 198);
+            this.Lasted20DataGridView.TabIndex = 3;
+            // 
+            // Lasted20Label
+            // 
+            this.Lasted20Label.AutoSize = true;
+            this.Lasted20Label.Location = new System.Drawing.Point(12, 191);
+            this.Lasted20Label.Name = "Lasted20Label";
+            this.Lasted20Label.Size = new System.Drawing.Size(87, 12);
+            this.Lasted20Label.TabIndex = 4;
+            this.Lasted20Label.Text = "最近20件の登録";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "登録日時";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "丸め日時";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "出勤/退勤";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 225);
+            this.ClientSize = new System.Drawing.Size(369, 419);
+            this.Controls.Add(this.Lasted20Label);
+            this.Controls.Add(this.Lasted20DataGridView);
             this.Controls.Add(this.FinishWorkButton);
             this.Controls.Add(this.StartWorkButton);
             this.Controls.Add(this.TimerTimeLabel);
@@ -97,6 +152,7 @@
             this.Name = "MainForm";
             this.Text = "Virgo";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Lasted20DataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,6 +165,11 @@
         private System.Windows.Forms.Timer CountTimer;
         private System.Windows.Forms.Button StartWorkButton;
         private System.Windows.Forms.Button FinishWorkButton;
+        private System.Windows.Forms.DataGridView Lasted20DataGridView;
+        private System.Windows.Forms.Label Lasted20Label;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
 
