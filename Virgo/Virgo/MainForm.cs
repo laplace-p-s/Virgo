@@ -46,12 +46,35 @@ namespace Virgo
 
         private void StartWorkButton_Click(object sender, EventArgs e)
         {
-
+            RecordWorkTime(DateTime.Now, 1);
         }
 
         private void FinishWorkButton_Click(object sender, EventArgs e)
         {
+            RecordWorkTime(DateTime.Now, 2);
+        }
 
+        /// <summary>
+        /// 勤怠記録テーブルへの書き込み処理を呼び出す
+        /// </summary>
+        /// <param name="recordDateTime">記録対象日時</param>
+        /// <param name="status">出勤(1)/退勤(2)</param>
+        private void RecordWorkTime(DateTime recordDateTime, int status)
+        {
+            string errMes = "";
+            DaoAttendance daoAttendance = new DaoAttendance();
+            daoAttendance.recordDate = recordDateTime.ToString();
+            daoAttendance.roundRecordDate = recordDateTime.ToString(); //TODO:丸め設定によって値を変える
+            daoAttendance.toWork = status;
+            errMes = daoAttendance.Insert();
+            if (errMes != "")
+            {
+                MessageBox.Show(errMes);
+            }
+            else
+            {
+                MessageBox.Show("登録を完了しました。", "勤怠登録");
+            }
         }
     }
 }
