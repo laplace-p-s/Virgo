@@ -156,8 +156,10 @@
             this.Controls.Add(this.StartWorkButton);
             this.Controls.Add(this.TimerTimeLabel);
             this.Controls.Add(this.TimerDayLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Virgo";
             this.Load += new System.EventHandler(this.MainForm_Load);
