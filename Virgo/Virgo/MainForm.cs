@@ -52,6 +52,9 @@ namespace Virgo
             GetLastedRecord();
         }
 
+        /// <summary>
+        /// 勤怠テーブルデータの最新20件を取得する
+        /// </summary>
         private void GetLastedRecord()
         {
             string errMes = "";
