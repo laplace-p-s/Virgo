@@ -22,6 +22,28 @@ namespace Virgo
             CountTimer.Start();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            GetLastedRecord();
+        }
+
+        private void CountTimer_Tick(object sender, EventArgs e)
+        {
+            DateTime nowTime = DateTime.Now;
+            TimerDayLabel.Text = nowTime.ToString("yyyy年 MM月 dd日 (ddd)");
+            TimerTimeLabel.Text = nowTime.ToLongTimeString();
+        }
+
+        private void StartWorkButton_Click(object sender, EventArgs e)
+        {
+            RecordWorkTime(DateTime.Now, 1);
+        }
+
+        private void FinishWorkButton_Click(object sender, EventArgs e)
+        {
+            RecordWorkTime(DateTime.Now, 2);
+        }
+
         /// <summary>
         /// DBの初期セットアップを行う
         /// </summary>
@@ -47,11 +69,6 @@ namespace Virgo
             Lasted20DataGridView.DataSource = Table;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            GetLastedRecord();
-        }
-
         /// <summary>
         /// 勤怠テーブルデータの最新20件を取得する
         /// </summary>
@@ -68,23 +85,6 @@ namespace Virgo
             {
                 MessageBox.Show(errMes);
             }
-        }
-
-        private void CountTimer_Tick(object sender, EventArgs e)
-        {
-            DateTime nowTime = DateTime.Now;
-            TimerDayLabel.Text  = nowTime.ToString("yyyy年 MM月 dd日 (ddd)");
-            TimerTimeLabel.Text = nowTime.ToLongTimeString();
-        }
-
-        private void StartWorkButton_Click(object sender, EventArgs e)
-        {
-            RecordWorkTime(DateTime.Now, 1);
-        }
-
-        private void FinishWorkButton_Click(object sender, EventArgs e)
-        {
-            RecordWorkTime(DateTime.Now, 2);
         }
 
         /// <summary>
