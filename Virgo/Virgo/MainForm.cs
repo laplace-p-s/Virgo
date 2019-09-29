@@ -15,7 +15,21 @@ namespace Virgo
         public MainForm()
         {
             InitializeComponent();
+            DBSetup();
             CountTimer.Start();
+        }
+
+        /// <summary>
+        /// DBの初期セットアップを行う
+        /// </summary>
+        private void DBSetup()
+        {
+            string errMes = "";
+            errMes = DaoAttendance.Setup();
+            if (errMes != "")
+            {
+                MessageBox.Show(errMes);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
