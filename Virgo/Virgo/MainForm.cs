@@ -146,5 +146,10 @@ namespace Virgo
             }
             return retStr;
         }
+
+        private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

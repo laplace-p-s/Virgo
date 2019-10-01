@@ -36,18 +36,28 @@
             this.StartWorkButton = new System.Windows.Forms.Button();
             this.FinishWorkButton = new System.Windows.Forms.Button();
             this.Lasted20DataGridView = new System.Windows.Forms.DataGridView();
-            this.Lasted20Label = new System.Windows.Forms.Label();
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoundRecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lasted20Label = new System.Windows.Forms.Label();
+            this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.SearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Lasted20DataGridView)).BeginInit();
+            this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // TimerDayLabel
             // 
             this.TimerDayLabel.AutoSize = true;
             this.TimerDayLabel.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TimerDayLabel.Location = new System.Drawing.Point(85, 24);
+            this.TimerDayLabel.Location = new System.Drawing.Point(85, 51);
             this.TimerDayLabel.Name = "TimerDayLabel";
             this.TimerDayLabel.Size = new System.Drawing.Size(197, 19);
             this.TimerDayLabel.TabIndex = 0;
@@ -57,7 +67,7 @@
             // 
             this.TimerTimeLabel.AutoSize = true;
             this.TimerTimeLabel.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TimerTimeLabel.Location = new System.Drawing.Point(133, 57);
+            this.TimerTimeLabel.Location = new System.Drawing.Point(133, 84);
             this.TimerTimeLabel.Name = "TimerTimeLabel";
             this.TimerTimeLabel.Size = new System.Drawing.Size(90, 21);
             this.TimerTimeLabel.TabIndex = 1;
@@ -70,7 +80,7 @@
             // StartWorkButton
             // 
             this.StartWorkButton.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.StartWorkButton.Location = new System.Drawing.Point(43, 110);
+            this.StartWorkButton.Location = new System.Drawing.Point(43, 137);
             this.StartWorkButton.Name = "StartWorkButton";
             this.StartWorkButton.Size = new System.Drawing.Size(119, 52);
             this.StartWorkButton.TabIndex = 1;
@@ -81,7 +91,7 @@
             // FinishWorkButton
             // 
             this.FinishWorkButton.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FinishWorkButton.Location = new System.Drawing.Point(203, 110);
+            this.FinishWorkButton.Location = new System.Drawing.Point(203, 137);
             this.FinishWorkButton.Name = "FinishWorkButton";
             this.FinishWorkButton.Size = new System.Drawing.Size(119, 52);
             this.FinishWorkButton.TabIndex = 2;
@@ -100,7 +110,7 @@
             this.RecordDate,
             this.RoundRecordDate,
             this.ToWork});
-            this.Lasted20DataGridView.Location = new System.Drawing.Point(12, 209);
+            this.Lasted20DataGridView.Location = new System.Drawing.Point(12, 236);
             this.Lasted20DataGridView.MultiSelect = false;
             this.Lasted20DataGridView.Name = "Lasted20DataGridView";
             this.Lasted20DataGridView.ReadOnly = true;
@@ -108,15 +118,6 @@
             this.Lasted20DataGridView.RowTemplate.Height = 21;
             this.Lasted20DataGridView.Size = new System.Drawing.Size(345, 198);
             this.Lasted20DataGridView.TabIndex = 3;
-            // 
-            // Lasted20Label
-            // 
-            this.Lasted20Label.AutoSize = true;
-            this.Lasted20Label.Location = new System.Drawing.Point(12, 191);
-            this.Lasted20Label.Name = "Lasted20Label";
-            this.Lasted20Label.Size = new System.Drawing.Size(87, 12);
-            this.Lasted20Label.TabIndex = 4;
-            this.Lasted20Label.Text = "最近20件の登録";
             // 
             // RecordDate
             // 
@@ -145,25 +146,106 @@
             this.ToWork.ReadOnly = true;
             this.ToWork.Width = 84;
             // 
+            // Lasted20Label
+            // 
+            this.Lasted20Label.AutoSize = true;
+            this.Lasted20Label.Location = new System.Drawing.Point(12, 218);
+            this.Lasted20Label.Name = "Lasted20Label";
+            this.Lasted20Label.Size = new System.Drawing.Size(87, 12);
+            this.Lasted20Label.TabIndex = 4;
+            this.Lasted20Label.Text = "最近20件の登録";
+            // 
+            // MainMenuStrip
+            // 
+            this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileToolStripMenuItem,
+            this.OptionToolStripMenuItem});
+            this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MainMenuStrip.Name = "MainMenuStrip";
+            this.MainMenuStrip.Size = new System.Drawing.Size(369, 24);
+            this.MainMenuStrip.TabIndex = 0;
+            this.MainMenuStrip.Text = "menuStrip1";
+            // 
+            // FileToolStripMenuItem
+            // 
+            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SearchToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.ExportToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.QuitToolStripMenuItem});
+            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.FileToolStripMenuItem.Text = "ファイル";
+            // 
+            // OptionToolStripMenuItem
+            // 
+            this.OptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SettingToolStripMenuItem});
+            this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
+            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.OptionToolStripMenuItem.Text = "オプション";
+            // 
+            // SettingToolStripMenuItem
+            // 
+            this.SettingToolStripMenuItem.Enabled = false;
+            this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SettingToolStripMenuItem.Text = "設定";
+            // 
+            // ExportToolStripMenuItem
+            // 
+            this.ExportToolStripMenuItem.Enabled = false;
+            this.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem";
+            this.ExportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExportToolStripMenuItem.Text = "エクスポート";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // QuitToolStripMenuItem
+            // 
+            this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
+            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.QuitToolStripMenuItem.Text = "終了";
+            this.QuitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // SearchToolStripMenuItem
+            // 
+            this.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem";
+            this.SearchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SearchToolStripMenuItem.Text = "検索";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 419);
+            this.ClientSize = new System.Drawing.Size(369, 446);
             this.Controls.Add(this.Lasted20Label);
             this.Controls.Add(this.Lasted20DataGridView);
             this.Controls.Add(this.FinishWorkButton);
             this.Controls.Add(this.StartWorkButton);
             this.Controls.Add(this.TimerTimeLabel);
             this.Controls.Add(this.TimerDayLabel);
+            this.Controls.Add(this.MainMenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.MainMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Virgo";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Lasted20DataGridView)).EndInit();
+            this.MainMenuStrip.ResumeLayout(false);
+            this.MainMenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +264,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoundRecordDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
+        private System.Windows.Forms.MenuStrip MainMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OptionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem QuitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SettingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SearchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 
