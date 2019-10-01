@@ -147,6 +147,12 @@ namespace Virgo
             return retStr;
         }
 
+        private void SearchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = new SearchForm();
+            form.Show();
+        }
+
         private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
