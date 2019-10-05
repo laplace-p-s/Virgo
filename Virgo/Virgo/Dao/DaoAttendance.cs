@@ -77,7 +77,8 @@ namespace Virgo
                         sql.AppendLine(" *");
                         sql.AppendLine("FROM " + TABLE_NAME);
                         sql.AppendLine("ORDER BY");
-                        sql.AppendLine(" record_date DESC");
+                        sql.AppendLine(" DATE(record_date) DESC,");
+                        sql.AppendLine(" TIME(record_date) DESC");
                         sql.AppendLine("LIMIT " + limit);
 
                         cmd.CommandText = sql.ToString();
