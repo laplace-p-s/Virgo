@@ -36,5 +36,10 @@ namespace Virgo
             Table.Columns.Add("ToWork", typeof(string));
             ResultDataGridView.DataSource = Table;
         }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
