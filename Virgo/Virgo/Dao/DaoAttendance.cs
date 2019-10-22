@@ -77,8 +77,9 @@ namespace Virgo
                         sql.AppendLine(" *");
                         sql.AppendLine("FROM " + TABLE_NAME);
                         sql.AppendLine("ORDER BY");
-                        sql.AppendLine(" DATE(record_date) DESC,");
-                        sql.AppendLine(" TIME(record_date) DESC");
+                        sql.AppendLine(" DATE(REPLACE(record_date,'/','-')) DESC,");
+                        sql.AppendLine(" TIME(REPLACE(record_date,'/','-')) DESC");
+                        //MEMO:データの投入形式がyyyy/MM/ddとなっているため、REPLACEしないとORDER BY文にマッチしない
                         sql.AppendLine("LIMIT " + limit);
 
                         cmd.CommandText = sql.ToString();
