@@ -33,7 +33,7 @@
             this.FromToLabel = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.ToDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ResultDataGridView = new System.Windows.Forms.DataGridView();
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             this.SearchGroupBox.Controls.Add(this.FromToLabel);
             this.SearchGroupBox.Controls.Add(this.SearchButton);
             this.SearchGroupBox.Controls.Add(this.Label1);
-            this.SearchGroupBox.Controls.Add(this.dateTimePicker2);
+            this.SearchGroupBox.Controls.Add(this.ToDateTimePicker);
             this.SearchGroupBox.Controls.Add(this.FromDateTimePicker);
             this.SearchGroupBox.Location = new System.Drawing.Point(26, 24);
             this.SearchGroupBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -91,13 +91,13 @@
             this.Label1.TabIndex = 2;
             this.Label1.Text = "～";
             // 
-            // dateTimePicker2
+            // ToDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(401, 88);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(273, 31);
-            this.dateTimePicker2.TabIndex = 1;
+            this.ToDateTimePicker.Location = new System.Drawing.Point(401, 88);
+            this.ToDateTimePicker.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ToDateTimePicker.Name = "ToDateTimePicker";
+            this.ToDateTimePicker.Size = new System.Drawing.Size(273, 31);
+            this.ToDateTimePicker.TabIndex = 1;
             // 
             // FromDateTimePicker
             // 
@@ -197,7 +197,7 @@
         private System.Windows.Forms.Label FromToLabel;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label Label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker ToDateTimePicker;
         private System.Windows.Forms.DateTimePicker FromDateTimePicker;
         private System.Windows.Forms.DataGridView ResultDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;

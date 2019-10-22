@@ -105,6 +105,59 @@ namespace Virgo
         }
 
         /// <summary>
+        /// 日付範囲による検索
+        /// </summary>
+        /// <param name="daoAttendanceList">検索結果格納用変数</param>
+        /// <param name="fromDate">検索開始範囲</param>
+        /// <param name="toDate">検索終了範囲</param>
+        /// <returns>エラーメッセージ 正常終了の場合空文字</returns>
+        public static string SelectFromTo(ref List<DaoAttendance> daoAttendanceList, DateTime fromDate, DateTime toDate)
+        {
+            string errMes = "";
+            try
+            {
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=" + DB_FILE_NAME))
+                {
+                    con.Open();
+                    using (SQLiteCommand cmd = con.CreateCommand())
+                    {
+                        StringBuilder sql = new StringBuilder();
+                        sql.AppendLine("SELECT");
+                        sql.AppendLine(" *");
+                        sql.AppendLine("FROM " + TABLE_NAME);
+                        sql.AppendLine("WHERE 1=1");
+                        sql.AppendLine(" AND REPLACE([record_date],'/','-') >= @startDate");
+                        sql.AppendLine(" AND REPLACE([record_date],'/','-') <= @endDate");
+                        //MEMO:データの投入形式がyyyy/MM/ddとなっているため、REPLACEしないとWHERE文にマッチしない
+
+                        cmd.Parameters.Add(new SQLiteParameter("startDate", fromDate));
+                        cmd.Parameters.Add(new SQLiteParameter("endDate"  , toDate));
+
+                        cmd.CommandText = sql.ToString();
+                        SQLiteDataReader reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            DaoAttendance attendance = new DaoAttendance();
+                            attendance.recordDate      = reader.GetFieldValue<string>(reader.GetOrdinal("record_date"));
+                            attendance.roundRecordDate = reader.GetFieldValue<string>(reader.GetOrdinal("round_record_date"));
+                            attendance.toWork          = reader.GetFieldValue<long>  (reader.GetOrdinal("to_work"));
+
+                            daoAttendanceList.Add(attendance);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                errMes = e.ToString();
+            }
+
+            return errMes;
+        }
+
+        /// <summary>
         /// メンバ変数の値を使ってINSERTを行う
         /// </summary>
         /// <returns>エラーメッセージ 正常終了の場合空文字</returns>
