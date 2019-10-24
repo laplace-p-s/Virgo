@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace Virgo
 {
@@ -25,6 +26,10 @@ namespace Virgo
         private void MainForm_Load(object sender, EventArgs e)
         {
             GetLastedRecord();
+            //バージョン情報を取得してウィンドウに表示
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Version version = assembly.GetName().Version;
+            this.Text = "Virgo " + version.ToString();
         }
 
         private void CountTimer_Tick(object sender, EventArgs e)
