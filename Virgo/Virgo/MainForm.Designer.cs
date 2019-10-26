@@ -248,10 +248,10 @@
             // 
             // AboutToolStripMenuItem
             // 
-            this.AboutToolStripMenuItem.Enabled = false;
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
             this.AboutToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.AboutToolStripMenuItem.Text = "About Virgo";
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // MainForm
             // 
