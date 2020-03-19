@@ -39,8 +39,10 @@
             // 
             // LogoPictureBox
             // 
+            this.LogoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-            this.LogoPictureBox.Location = new System.Drawing.Point(222, 60);
+            this.LogoPictureBox.Location = new System.Drawing.Point(210, 42);
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.Size = new System.Drawing.Size(200, 200);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -49,9 +51,11 @@
             // 
             // VirgoLabel
             // 
+            this.VirgoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.VirgoLabel.AutoSize = true;
             this.VirgoLabel.Font = new System.Drawing.Font("MS UI Gothic", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.VirgoLabel.Location = new System.Drawing.Point(270, 305);
+            this.VirgoLabel.Location = new System.Drawing.Point(252, 297);
             this.VirgoLabel.Name = "VirgoLabel";
             this.VirgoLabel.Size = new System.Drawing.Size(112, 43);
             this.VirgoLabel.TabIndex = 1;
@@ -59,9 +63,11 @@
             // 
             // VersionLabel
             // 
+            this.VersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.VersionLabel.AutoSize = true;
             this.VersionLabel.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.VersionLabel.Location = new System.Drawing.Point(218, 386);
+            this.VersionLabel.Location = new System.Drawing.Point(204, 386);
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(207, 33);
             this.VersionLabel.TabIndex = 2;
@@ -69,6 +75,8 @@
             // 
             // GitHubLinkLabel
             // 
+            this.GitHubLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GitHubLinkLabel.AutoSize = true;
             this.GitHubLinkLabel.Location = new System.Drawing.Point(274, 474);
             this.GitHubLinkLabel.Name = "GitHubLinkLabel";
