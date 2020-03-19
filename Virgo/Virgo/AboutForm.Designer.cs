@@ -33,6 +33,7 @@
             this.VirgoLabel = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
             this.GitHubLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.CopyRightLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +78,21 @@
             this.GitHubLinkLabel.Text = "GitHub";
             this.GitHubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GitHubLinkLabel_LinkClicked);
             // 
+            // CopyRightLabel
+            // 
+            this.CopyRightLabel.AutoSize = true;
+            this.CopyRightLabel.Location = new System.Drawing.Point(46, 546);
+            this.CopyRightLabel.Name = "CopyRightLabel";
+            this.CopyRightLabel.Size = new System.Drawing.Size(101, 24);
+            this.CopyRightLabel.TabIndex = 4;
+            this.CopyRightLabel.Text = "copyright";
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 654);
+            this.Controls.Add(this.CopyRightLabel);
             this.Controls.Add(this.GitHubLinkLabel);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.VirgoLabel);
@@ -105,5 +116,6 @@
         private System.Windows.Forms.Label VirgoLabel;
         private System.Windows.Forms.Label VersionLabel;
         private System.Windows.Forms.LinkLabel GitHubLinkLabel;
+        private System.Windows.Forms.Label CopyRightLabel;
     }
 }

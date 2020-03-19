@@ -26,6 +26,8 @@ namespace Virgo
             Version version = assembly.GetName().Version;
             VersionLabel.Text = "Version " + version.ToString();
             //コピーライト取得・表示
+            string copyRight = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright;
+            CopyRightLabel.Text = copyRight;
         }
 
         private void GitHubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
