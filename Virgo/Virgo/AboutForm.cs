@@ -27,5 +27,12 @@ namespace Virgo
             VersionLabel.Text = "Version " + version.ToString();
             //コピーライト取得・表示
         }
+
+        private void GitHubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //リンク先を定義する
+            //参考：https://dobon.net/vb/dotnet/control/linklabel.html
+            System.Diagnostics.Process.Start("https://github.com/laplace-p-s/Virgo");
+        }
     }
 }

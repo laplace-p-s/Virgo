@@ -32,6 +32,7 @@
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.VirgoLabel = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
+            this.GitHubLinkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,11 +66,23 @@
             this.VersionLabel.TabIndex = 2;
             this.VersionLabel.Text = "Version x.x.x.x";
             // 
+            // GitHubLinkLabel
+            // 
+            this.GitHubLinkLabel.AutoSize = true;
+            this.GitHubLinkLabel.Location = new System.Drawing.Point(274, 474);
+            this.GitHubLinkLabel.Name = "GitHubLinkLabel";
+            this.GitHubLinkLabel.Size = new System.Drawing.Size(78, 24);
+            this.GitHubLinkLabel.TabIndex = 3;
+            this.GitHubLinkLabel.TabStop = true;
+            this.GitHubLinkLabel.Text = "GitHub";
+            this.GitHubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GitHubLinkLabel_LinkClicked);
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 654);
+            this.Controls.Add(this.GitHubLinkLabel);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.VirgoLabel);
             this.Controls.Add(this.LogoPictureBox);
@@ -91,5 +104,6 @@
         private System.Windows.Forms.PictureBox LogoPictureBox;
         private System.Windows.Forms.Label VirgoLabel;
         private System.Windows.Forms.Label VersionLabel;
+        private System.Windows.Forms.LinkLabel GitHubLinkLabel;
     }
 }
