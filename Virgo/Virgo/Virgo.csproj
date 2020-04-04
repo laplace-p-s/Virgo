@@ -61,6 +61,7 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dao\DaoAttendance.cs" />
+    <Compile Include="Dao\DaoSettings.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
