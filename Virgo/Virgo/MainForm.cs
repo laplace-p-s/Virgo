@@ -168,5 +168,11 @@ namespace Virgo
             Form form = new AboutForm();
             form.ShowDialog();
         }
+
+        private void SettingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = new SettingsForm();
+            form.ShowDialog();
+        }
     }
 }
