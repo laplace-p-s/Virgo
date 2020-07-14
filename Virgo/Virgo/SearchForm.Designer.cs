@@ -36,10 +36,9 @@
             this.ToDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ResultDataGridView = new System.Windows.Forms.DataGridView();
-            this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoundRecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Label2 = new System.Windows.Forms.Label();
+            this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +115,6 @@
             this.ResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordDate,
-            this.RoundRecordDate,
             this.ToWork});
             this.ResultDataGridView.Location = new System.Drawing.Point(26, 332);
             this.ResultDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -129,6 +127,16 @@
             this.ResultDataGridView.Size = new System.Drawing.Size(964, 704);
             this.ResultDataGridView.TabIndex = 3;
             // 
+            // Label2
+            // 
+            this.Label2.AutoSize = true;
+            this.Label2.Location = new System.Drawing.Point(26, 296);
+            this.Label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(106, 24);
+            this.Label2.TabIndex = 4;
+            this.Label2.Text = "検索結果";
+            // 
             // RecordDate
             // 
             this.RecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -139,16 +147,6 @@
             this.RecordDate.ReadOnly = true;
             this.RecordDate.Width = 151;
             // 
-            // RoundRecordDate
-            // 
-            this.RoundRecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.RoundRecordDate.DataPropertyName = "RoundRecordDate";
-            this.RoundRecordDate.HeaderText = "丸め日時";
-            this.RoundRecordDate.MinimumWidth = 10;
-            this.RoundRecordDate.Name = "RoundRecordDate";
-            this.RoundRecordDate.ReadOnly = true;
-            this.RoundRecordDate.Width = 147;
-            // 
             // ToWork
             // 
             this.ToWork.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -158,16 +156,6 @@
             this.ToWork.Name = "ToWork";
             this.ToWork.ReadOnly = true;
             this.ToWork.Width = 163;
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(26, 296);
-            this.Label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(106, 24);
-            this.Label2.TabIndex = 4;
-            this.Label2.Text = "検索結果";
             // 
             // SearchForm
             // 
@@ -200,9 +188,8 @@
         private System.Windows.Forms.DateTimePicker ToDateTimePicker;
         private System.Windows.Forms.DateTimePicker FromDateTimePicker;
         private System.Windows.Forms.DataGridView ResultDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoundRecordDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
         private System.Windows.Forms.Label Label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
     }
 }

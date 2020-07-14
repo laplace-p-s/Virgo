@@ -36,9 +36,6 @@
             this.StartWorkButton = new System.Windows.Forms.Button();
             this.FinishWorkButton = new System.Windows.Forms.Button();
             this.Lasted20DataGridView = new System.Windows.Forms.DataGridView();
-            this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoundRecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lasted20Label = new System.Windows.Forms.Label();
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +48,8 @@
             this.SettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Lasted20DataGridView)).BeginInit();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +113,6 @@
             this.Lasted20DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Lasted20DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordDate,
-            this.RoundRecordDate,
             this.ToWork});
             this.Lasted20DataGridView.Location = new System.Drawing.Point(26, 472);
             this.Lasted20DataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -126,36 +124,6 @@
             this.Lasted20DataGridView.RowTemplate.Height = 21;
             this.Lasted20DataGridView.Size = new System.Drawing.Size(748, 396);
             this.Lasted20DataGridView.TabIndex = 3;
-            // 
-            // RecordDate
-            // 
-            this.RecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.RecordDate.DataPropertyName = "RecordDate";
-            this.RecordDate.HeaderText = "登録日時";
-            this.RecordDate.MinimumWidth = 10;
-            this.RecordDate.Name = "RecordDate";
-            this.RecordDate.ReadOnly = true;
-            this.RecordDate.Width = 151;
-            // 
-            // RoundRecordDate
-            // 
-            this.RoundRecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.RoundRecordDate.DataPropertyName = "RoundRecordDate";
-            this.RoundRecordDate.HeaderText = "丸め日時";
-            this.RoundRecordDate.MinimumWidth = 10;
-            this.RoundRecordDate.Name = "RoundRecordDate";
-            this.RoundRecordDate.ReadOnly = true;
-            this.RoundRecordDate.Width = 147;
-            // 
-            // ToWork
-            // 
-            this.ToWork.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ToWork.DataPropertyName = "ToWork";
-            this.ToWork.HeaderText = "出勤/退勤";
-            this.ToWork.MinimumWidth = 10;
-            this.ToWork.Name = "ToWork";
-            this.ToWork.ReadOnly = true;
-            this.ToWork.Width = 163;
             // 
             // Lasted20Label
             // 
@@ -177,7 +145,7 @@
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
             this.MainMenuStrip.Padding = new System.Windows.Forms.Padding(13, 4, 0, 4);
-            this.MainMenuStrip.Size = new System.Drawing.Size(800, 46);
+            this.MainMenuStrip.Size = new System.Drawing.Size(800, 44);
             this.MainMenuStrip.TabIndex = 0;
             this.MainMenuStrip.Text = "menuStrip1";
             // 
@@ -190,7 +158,7 @@
             this.toolStripSeparator1,
             this.QuitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 38);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 36);
             this.FileToolStripMenuItem.Text = "ファイル";
             // 
             // SearchToolStripMenuItem
@@ -231,27 +199,47 @@
             this.toolStripSeparator3,
             this.AboutToolStripMenuItem});
             this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
-            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 38);
+            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 36);
             this.OptionToolStripMenuItem.Text = "オプション";
             // 
             // SettingToolStripMenuItem
             // 
             this.SettingToolStripMenuItem.Enabled = false;
             this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
-            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(283, 44);
             this.SettingToolStripMenuItem.Text = "設定(開発中)";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(356, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(280, 6);
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(283, 44);
             this.AboutToolStripMenuItem.Text = "About Virgo";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            // 
+            // RecordDate
+            // 
+            this.RecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.RecordDate.DataPropertyName = "RecordDate";
+            this.RecordDate.HeaderText = "登録日時";
+            this.RecordDate.MinimumWidth = 10;
+            this.RecordDate.Name = "RecordDate";
+            this.RecordDate.ReadOnly = true;
+            this.RecordDate.Width = 151;
+            // 
+            // ToWork
+            // 
+            this.ToWork.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ToWork.DataPropertyName = "ToWork";
+            this.ToWork.HeaderText = "出勤/退勤";
+            this.ToWork.MinimumWidth = 10;
+            this.ToWork.Name = "ToWork";
+            this.ToWork.ReadOnly = true;
+            this.ToWork.Width = 163;
             // 
             // MainForm
             // 
@@ -290,9 +278,6 @@
         private System.Windows.Forms.DataGridView Lasted20DataGridView;
         private System.Windows.Forms.Label Lasted20Label;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoundRecordDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
         private System.Windows.Forms.MenuStrip MainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OptionToolStripMenuItem;
@@ -304,6 +289,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
     }
 }
 

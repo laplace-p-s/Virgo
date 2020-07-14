@@ -32,7 +32,7 @@ namespace Virgo
         {
             Table = new DataTable();
             Table.Columns.Add("RecordDate", typeof(string));
-            Table.Columns.Add("RoundRecordDate", typeof(string));
+            //Table.Columns.Add("RoundRecordDate", typeof(string));
             Table.Columns.Add("ToWork", typeof(string));
             ResultDataGridView.DataSource = Table;
         }
@@ -77,7 +77,7 @@ namespace Virgo
             {
                 DataRow row = Table.NewRow();
                 row["RecordDate"]      = attendance.recordDate;
-                row["RoundRecordDate"] = attendance.roundRecordDate;
+                //row["RoundRecordDate"] = attendance.roundRecordDate;
                 row["ToWork"]          = GetRecordStatus(attendance.toWork);
                 Table.Rows.Add(row);
             }
