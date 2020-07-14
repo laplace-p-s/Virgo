@@ -13,7 +13,6 @@ namespace Virgo
         private static string TABLE_NAME = "Attendance";
 
         public string recordDate;
-        //public string roundRecordDate;
         public long   toWork;
 
         public DaoAttendance()
@@ -39,7 +38,6 @@ namespace Virgo
                         sql.AppendLine("CREATE TABLE IF NOT EXISTS " + TABLE_NAME);
                         sql.AppendLine("(");
                         sql.AppendLine(" record_date TEXT,");
-                        sql.AppendLine(" round_record_date TEXT,");
                         sql.AppendLine(" to_work INTEGER");
                         sql.AppendLine(")");
 
@@ -89,7 +87,6 @@ namespace Virgo
                         {
                             DaoAttendance attendance = new DaoAttendance();
                             attendance.recordDate      = reader.GetFieldValue<string>(reader.GetOrdinal("record_date"));
-                            //attendance.roundRecordDate = reader.GetFieldValue<string>(reader.GetOrdinal("round_record_date"));
                             attendance.toWork          = reader.GetFieldValue<long>  (reader.GetOrdinal("to_work"));
 
                             daoAttendanceList.Add(attendance);
@@ -141,7 +138,6 @@ namespace Virgo
                         {
                             DaoAttendance attendance = new DaoAttendance();
                             attendance.recordDate      = reader.GetFieldValue<string>(reader.GetOrdinal("record_date"));
-                            //attendance.roundRecordDate = reader.GetFieldValue<string>(reader.GetOrdinal("round_record_date"));
                             attendance.toWork          = reader.GetFieldValue<long>  (reader.GetOrdinal("to_work"));
 
                             daoAttendanceList.Add(attendance);
@@ -176,18 +172,15 @@ namespace Virgo
                         sql.AppendLine("INSERT INTO " + TABLE_NAME);
                         sql.AppendLine("(");
                         sql.AppendLine(" record_date,");
-                        //sql.AppendLine(" round_record_date,");
                         sql.AppendLine(" to_work");
                         sql.AppendLine(")");
                         sql.AppendLine("VALUES");
                         sql.AppendLine("(");
                         sql.AppendLine(" @RecordDate,");
-                        //sql.AppendLine(" @RoundRecordDate,");
                         sql.AppendLine(" @ToWork");
                         sql.AppendLine(")");
 
                         cmd.Parameters.Add(new SQLiteParameter("RecordDate"     , recordDate));
-                        //cmd.Parameters.Add(new SQLiteParameter("RoundRecordDate", roundRecordDate));
                         cmd.Parameters.Add(new SQLiteParameter("ToWork"         , toWork));
 
                         cmd.CommandText = sql.ToString();

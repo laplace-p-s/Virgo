@@ -69,7 +69,6 @@ namespace Virgo
         {
             Table = new DataTable();
             Table.Columns.Add("RecordDate"     , typeof(string));
-            //Table.Columns.Add("RoundRecordDate", typeof(string));
             Table.Columns.Add("ToWork"         , typeof(string));
             Lasted20DataGridView.DataSource = Table;
         }
@@ -102,7 +101,6 @@ namespace Virgo
             string errMes = "";
             DaoAttendance daoAttendance = new DaoAttendance();
             daoAttendance.recordDate = recordDateTime.ToString();
-            //daoAttendance.roundRecordDate = recordDateTime.ToString(); //TODO:丸め設定によって値を変える
             daoAttendance.toWork = status;
             errMes = daoAttendance.Insert();
             if (errMes != "")
@@ -127,7 +125,6 @@ namespace Virgo
             {
                 DataRow row = Table.NewRow();
                 row["RecordDate"]      = attendance.recordDate;
-                //row["RoundRecordDate"] = attendance.roundRecordDate;
                 row["ToWork"]          = GetRecordStatus(attendance.toWork);
                 Table.Rows.Add(row);
             }
