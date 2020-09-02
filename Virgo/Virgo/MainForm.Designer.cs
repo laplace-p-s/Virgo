@@ -36,6 +36,8 @@
             this.StartWorkButton = new System.Windows.Forms.Button();
             this.FinishWorkButton = new System.Windows.Forms.Button();
             this.Lasted20DataGridView = new System.Windows.Forms.DataGridView();
+            this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lasted20Label = new System.Windows.Forms.Label();
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +50,8 @@
             this.SettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastActionLabel = new System.Windows.Forms.Label();
+            this.MessageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Lasted20DataGridView)).BeginInit();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +116,7 @@
             this.Lasted20DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordDate,
             this.ToWork});
-            this.Lasted20DataGridView.Location = new System.Drawing.Point(26, 472);
+            this.Lasted20DataGridView.Location = new System.Drawing.Point(26, 462);
             this.Lasted20DataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Lasted20DataGridView.MultiSelect = false;
             this.Lasted20DataGridView.Name = "Lasted20DataGridView";
@@ -122,13 +124,33 @@
             this.Lasted20DataGridView.RowHeadersVisible = false;
             this.Lasted20DataGridView.RowHeadersWidth = 82;
             this.Lasted20DataGridView.RowTemplate.Height = 21;
-            this.Lasted20DataGridView.Size = new System.Drawing.Size(748, 396);
+            this.Lasted20DataGridView.Size = new System.Drawing.Size(748, 288);
             this.Lasted20DataGridView.TabIndex = 3;
+            // 
+            // RecordDate
+            // 
+            this.RecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.RecordDate.DataPropertyName = "RecordDate";
+            this.RecordDate.HeaderText = "登録日時";
+            this.RecordDate.MinimumWidth = 10;
+            this.RecordDate.Name = "RecordDate";
+            this.RecordDate.ReadOnly = true;
+            this.RecordDate.Width = 151;
+            // 
+            // ToWork
+            // 
+            this.ToWork.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ToWork.DataPropertyName = "ToWork";
+            this.ToWork.HeaderText = "出勤/退勤";
+            this.ToWork.MinimumWidth = 10;
+            this.ToWork.Name = "ToWork";
+            this.ToWork.ReadOnly = true;
+            this.ToWork.Width = 163;
             // 
             // Lasted20Label
             // 
             this.Lasted20Label.AutoSize = true;
-            this.Lasted20Label.Location = new System.Drawing.Point(26, 436);
+            this.Lasted20Label.Location = new System.Drawing.Point(26, 426);
             this.Lasted20Label.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.Lasted20Label.Name = "Lasted20Label";
             this.Lasted20Label.Size = new System.Drawing.Size(174, 24);
@@ -145,7 +167,7 @@
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
             this.MainMenuStrip.Padding = new System.Windows.Forms.Padding(13, 4, 0, 4);
-            this.MainMenuStrip.Size = new System.Drawing.Size(800, 44);
+            this.MainMenuStrip.Size = new System.Drawing.Size(800, 48);
             this.MainMenuStrip.TabIndex = 0;
             this.MainMenuStrip.Text = "menuStrip1";
             // 
@@ -158,7 +180,7 @@
             this.toolStripSeparator1,
             this.QuitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 36);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 40);
             this.FileToolStripMenuItem.Text = "ファイル";
             // 
             // SearchToolStripMenuItem
@@ -199,7 +221,7 @@
             this.toolStripSeparator3,
             this.AboutToolStripMenuItem});
             this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
-            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 36);
+            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 40);
             this.OptionToolStripMenuItem.Text = "オプション";
             // 
             // SettingToolStripMenuItem
@@ -221,31 +243,30 @@
             this.AboutToolStripMenuItem.Text = "About Virgo";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // RecordDate
+            // LastActionLabel
             // 
-            this.RecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.RecordDate.DataPropertyName = "RecordDate";
-            this.RecordDate.HeaderText = "登録日時";
-            this.RecordDate.MinimumWidth = 10;
-            this.RecordDate.Name = "RecordDate";
-            this.RecordDate.ReadOnly = true;
-            this.RecordDate.Width = 151;
+            this.LastActionLabel.AutoSize = true;
+            this.LastActionLabel.Location = new System.Drawing.Point(30, 776);
+            this.LastActionLabel.Name = "LastActionLabel";
+            this.LastActionLabel.Size = new System.Drawing.Size(513, 24);
+            this.LastActionLabel.TabIndex = 5;
+            this.LastActionLabel.Text = "最終更新：yyyy年 MM月 dd日(月) hh:mm:ss | 出勤";
             // 
-            // ToWork
+            // MessageLabel
             // 
-            this.ToWork.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ToWork.DataPropertyName = "ToWork";
-            this.ToWork.HeaderText = "出勤/退勤";
-            this.ToWork.MinimumWidth = 10;
-            this.ToWork.Name = "ToWork";
-            this.ToWork.ReadOnly = true;
-            this.ToWork.Width = 163;
+            this.MessageLabel.AutoSize = true;
+            this.MessageLabel.Location = new System.Drawing.Point(30, 832);
+            this.MessageLabel.Name = "MessageLabel";
+            this.MessageLabel.Size = new System.Drawing.Size(0, 24);
+            this.MessageLabel.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 892);
+            this.Controls.Add(this.MessageLabel);
+            this.Controls.Add(this.LastActionLabel);
             this.Controls.Add(this.Lasted20Label);
             this.Controls.Add(this.Lasted20DataGridView);
             this.Controls.Add(this.FinishWorkButton);
@@ -291,6 +312,8 @@
         private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
+        private System.Windows.Forms.Label LastActionLabel;
+        private System.Windows.Forms.Label MessageLabel;
     }
 }
 
