@@ -84,6 +84,7 @@ namespace Virgo
             if (errMes == "")
             {
                 SetDataTable(daoAttendanceList);
+                SetLastActionLabel(daoAttendanceList[0]);
             }
             else
             {
@@ -109,7 +110,7 @@ namespace Virgo
             }
             else
             {
-                MessageBox.Show("登録を完了しました。", "勤怠登録");
+                MessageLabel.Text = "登録を完了しました。 ( " + recordDateTime.ToLongTimeString() + " )";
                 GetLastedRecord();                
             }
         }
@@ -147,6 +148,19 @@ namespace Virgo
                 retStr = "退勤";
             }
             return retStr;
+        }
+
+        /// <summary>
+        /// 最終更新ラベルを更新する
+        /// </summary>
+        /// <param name="daoAttendance">記載したい情報の入ったDaoAttendanceオブジェクト</param>
+        private void SetLastActionLabel(DaoAttendance daoAttendance)
+        {
+            string txt = "最終更新：";
+            txt += daoAttendance.recordDate.ToString();
+            txt += " | ";
+            txt += GetRecordStatus(daoAttendance.toWork);
+            LastActionLabel.Text = txt;
         }
 
         private void SearchToolStripMenuItem_Click(object sender, EventArgs e)
