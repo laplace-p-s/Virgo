@@ -167,7 +167,7 @@
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
             this.MainMenuStrip.Padding = new System.Windows.Forms.Padding(13, 4, 0, 4);
-            this.MainMenuStrip.Size = new System.Drawing.Size(800, 48);
+            this.MainMenuStrip.Size = new System.Drawing.Size(800, 44);
             this.MainMenuStrip.TabIndex = 0;
             this.MainMenuStrip.Text = "menuStrip1";
             // 
@@ -180,7 +180,7 @@
             this.toolStripSeparator1,
             this.QuitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 40);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 36);
             this.FileToolStripMenuItem.Text = "ファイル";
             // 
             // SearchToolStripMenuItem
@@ -221,7 +221,7 @@
             this.toolStripSeparator3,
             this.AboutToolStripMenuItem});
             this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
-            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 40);
+            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 36);
             this.OptionToolStripMenuItem.Text = "オプション";
             // 
             // SettingToolStripMenuItem
@@ -259,6 +259,7 @@
             this.MessageLabel.Name = "MessageLabel";
             this.MessageLabel.Size = new System.Drawing.Size(0, 24);
             this.MessageLabel.TabIndex = 6;
+            this.MessageLabel.Click += new System.EventHandler(this.MessageLabel_Click);
             // 
             // MainForm
             // 
