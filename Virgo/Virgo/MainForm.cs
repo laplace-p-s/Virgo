@@ -84,7 +84,14 @@ namespace Virgo
             if (errMes == "")
             {
                 SetDataTable(daoAttendanceList);
-                SetLastActionLabel(daoAttendanceList[0]);
+                if (daoAttendanceList.Count > 1)
+                {
+                    SetLastActionLabel(daoAttendanceList[0]);
+                }
+                else
+                {
+                    LastActionLabel.Text = "";
+                }
             }
             else
             {
