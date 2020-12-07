@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchForm));
             this.SearchGroupBox = new System.Windows.Forms.GroupBox();
+            this.StatusLabel = new System.Windows.Forms.Label();
+            this.StatusComboBox = new System.Windows.Forms.ComboBox();
             this.FromToLabel = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
@@ -39,8 +41,6 @@
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Label2 = new System.Windows.Forms.Label();
-            this.StatusComboBox = new System.Windows.Forms.ComboBox();
-            this.StatusLabel = new System.Windows.Forms.Label();
             this.SearchGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -54,31 +54,46 @@
             this.SearchGroupBox.Controls.Add(this.Label1);
             this.SearchGroupBox.Controls.Add(this.ToDateTimePicker);
             this.SearchGroupBox.Controls.Add(this.FromDateTimePicker);
-            this.SearchGroupBox.Location = new System.Drawing.Point(26, 24);
-            this.SearchGroupBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.SearchGroupBox.Location = new System.Drawing.Point(12, 12);
             this.SearchGroupBox.Name = "SearchGroupBox";
-            this.SearchGroupBox.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.SearchGroupBox.Size = new System.Drawing.Size(964, 200);
+            this.SearchGroupBox.Size = new System.Drawing.Size(445, 100);
             this.SearchGroupBox.TabIndex = 1;
             this.SearchGroupBox.TabStop = false;
             this.SearchGroupBox.Text = "検索";
             // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(342, 22);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(59, 12);
+            this.StatusLabel.TabIndex = 6;
+            this.StatusLabel.Text = "出勤/退勤";
+            // 
+            // StatusComboBox
+            // 
+            this.StatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StatusComboBox.FormattingEnabled = true;
+            this.StatusComboBox.Location = new System.Drawing.Point(344, 36);
+            this.StatusComboBox.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.StatusComboBox.Name = "StatusComboBox";
+            this.StatusComboBox.Size = new System.Drawing.Size(75, 20);
+            this.StatusComboBox.TabIndex = 5;
+            // 
             // FromToLabel
             // 
             this.FromToLabel.AutoSize = true;
-            this.FromToLabel.Location = new System.Drawing.Point(56, 43);
-            this.FromToLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.FromToLabel.Location = new System.Drawing.Point(26, 22);
             this.FromToLabel.Name = "FromToLabel";
-            this.FromToLabel.Size = new System.Drawing.Size(106, 24);
+            this.FromToLabel.Size = new System.Drawing.Size(53, 12);
             this.FromToLabel.TabIndex = 4;
             this.FromToLabel.Text = "記録日付";
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(745, 131);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.SearchButton.Location = new System.Drawing.Point(344, 66);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(163, 46);
+            this.SearchButton.Size = new System.Drawing.Size(75, 23);
             this.SearchButton.TabIndex = 3;
             this.SearchButton.Text = "検索";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -87,27 +102,24 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(351, 83);
-            this.Label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.Label1.Location = new System.Drawing.Point(162, 42);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(34, 24);
+            this.Label1.Size = new System.Drawing.Size(17, 12);
             this.Label1.TabIndex = 2;
             this.Label1.Text = "～";
             // 
             // ToDateTimePicker
             // 
-            this.ToDateTimePicker.Location = new System.Drawing.Point(401, 73);
-            this.ToDateTimePicker.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ToDateTimePicker.Location = new System.Drawing.Point(185, 36);
             this.ToDateTimePicker.Name = "ToDateTimePicker";
-            this.ToDateTimePicker.Size = new System.Drawing.Size(273, 31);
+            this.ToDateTimePicker.Size = new System.Drawing.Size(128, 19);
             this.ToDateTimePicker.TabIndex = 1;
             // 
             // FromDateTimePicker
             // 
-            this.FromDateTimePicker.Location = new System.Drawing.Point(61, 73);
-            this.FromDateTimePicker.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.FromDateTimePicker.Location = new System.Drawing.Point(28, 36);
             this.FromDateTimePicker.Name = "FromDateTimePicker";
-            this.FromDateTimePicker.Size = new System.Drawing.Size(273, 31);
+            this.FromDateTimePicker.Size = new System.Drawing.Size(128, 19);
             this.FromDateTimePicker.TabIndex = 0;
             // 
             // ResultDataGridView
@@ -120,15 +132,14 @@
             this.ResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordDate,
             this.ToWork});
-            this.ResultDataGridView.Location = new System.Drawing.Point(26, 332);
-            this.ResultDataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ResultDataGridView.Location = new System.Drawing.Point(12, 166);
             this.ResultDataGridView.MultiSelect = false;
             this.ResultDataGridView.Name = "ResultDataGridView";
             this.ResultDataGridView.ReadOnly = true;
             this.ResultDataGridView.RowHeadersVisible = false;
             this.ResultDataGridView.RowHeadersWidth = 82;
             this.ResultDataGridView.RowTemplate.Height = 21;
-            this.ResultDataGridView.Size = new System.Drawing.Size(964, 704);
+            this.ResultDataGridView.Size = new System.Drawing.Size(445, 352);
             this.ResultDataGridView.TabIndex = 3;
             // 
             // RecordDate
@@ -139,7 +150,7 @@
             this.RecordDate.MinimumWidth = 10;
             this.RecordDate.Name = "RecordDate";
             this.RecordDate.ReadOnly = true;
-            this.RecordDate.Width = 151;
+            this.RecordDate.Width = 78;
             // 
             // ToWork
             // 
@@ -149,48 +160,28 @@
             this.ToWork.MinimumWidth = 10;
             this.ToWork.Name = "ToWork";
             this.ToWork.ReadOnly = true;
-            this.ToWork.Width = 163;
+            this.ToWork.Width = 84;
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(26, 296);
-            this.Label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.Label2.Location = new System.Drawing.Point(12, 148);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(106, 24);
+            this.Label2.Size = new System.Drawing.Size(53, 12);
             this.Label2.TabIndex = 4;
             this.Label2.Text = "検索結果";
             // 
-            // StatusComboBox
-            // 
-            this.StatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.StatusComboBox.FormattingEnabled = true;
-            this.StatusComboBox.Location = new System.Drawing.Point(745, 72);
-            this.StatusComboBox.Name = "StatusComboBox";
-            this.StatusComboBox.Size = new System.Drawing.Size(163, 32);
-            this.StatusComboBox.TabIndex = 5;
-            // 
-            // StatusLabel
-            // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(741, 43);
-            this.StatusLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(118, 24);
-            this.StatusLabel.TabIndex = 6;
-            this.StatusLabel.Text = "出勤/退勤";
-            // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 1060);
+            this.ClientSize = new System.Drawing.Size(469, 530);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.SearchGroupBox);
             this.Controls.Add(this.ResultDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.MaximizeBox = false;
             this.Name = "SearchForm";
             this.Text = "Virgo | 検索";
