@@ -44,8 +44,8 @@ namespace Virgo
         {
             string errMes = "";
             //検索条件の取得
-            DateTime searchFormDate = FromDateTimePicker.Value;
-            DateTime searchToDate   = ToDateTimePicker.Value;
+            DateTime searchFormDate = Common.FormatDatetimeStart(FromDateTimePicker.Value);
+            DateTime searchToDate   = Common.FormatDatetimeEnd(ToDateTimePicker.Value);
             String searchStatus = this.StatusComboBox.SelectedItem.ToString();
 
             //ステータスのコード変換
