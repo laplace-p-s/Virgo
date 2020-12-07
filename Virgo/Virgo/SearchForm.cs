@@ -46,19 +46,7 @@ namespace Virgo
             //検索条件の取得
             DateTime searchFormDate = Common.FormatDatetimeStart(FromDateTimePicker.Value);
             DateTime searchToDate   = Common.FormatDatetimeEnd(ToDateTimePicker.Value);
-            String searchStatus = this.StatusComboBox.SelectedItem.ToString();
-
-            //ステータスのコード変換
-            //TODO:コード変換はcommonなり別クラスに分ける
-            int searchStatusCode = 0;
-            if (searchStatus == "出勤")
-            {
-                searchStatusCode = 1;
-            }
-            else if (searchStatus == "退勤")
-            {
-                searchStatusCode = 2;
-            }
+            int searchStatusCode    = Common.GetStatusCodeFromText(this.StatusComboBox.SelectedItem.ToString()); //ステータスのコード変換
 
             //FromToの整合性チェック
 

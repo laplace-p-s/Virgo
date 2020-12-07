@@ -33,5 +33,28 @@ namespace Virgo
 
             return retDatetime;
         }
+
+        /// <summary>
+        /// 出勤/退勤のステータス文字列を対応するコードに変換する
+        /// 出勤：1
+        /// 退勤：2
+        /// ※テキストが条件に入らない場合は0で返す
+        /// </summary>
+        /// <param name="statusText">ステータス文字列</param>
+        /// <returns>ステータスコード</returns>
+        public static int GetStatusCodeFromText(string statusText)
+        {
+            int retCode = 0;
+            if (statusText == "出勤")
+            {
+                retCode = 1;
+            }
+            else if (statusText == "退勤")
+            {
+                retCode = 2;
+            }
+
+            return retCode;
+        }
     }
 }
