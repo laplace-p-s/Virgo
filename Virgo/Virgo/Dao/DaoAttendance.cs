@@ -108,8 +108,9 @@ namespace Virgo
         /// <param name="daoAttendanceList">検索結果格納用変数</param>
         /// <param name="fromDate">検索開始範囲</param>
         /// <param name="toDate">検索終了範囲</param>
+        /// <param name="statusCode">ステータスコード</param>
         /// <returns>エラーメッセージ 正常終了の場合空文字</returns>
-        public static string SelectFromTo(ref List<DaoAttendance> daoAttendanceList, DateTime fromDate, DateTime toDate)
+        public static string SelectFromTo(ref List<DaoAttendance> daoAttendanceList, DateTime fromDate, DateTime toDate, int statusCode)
         {
             string errMes = "";
             try
@@ -130,6 +131,13 @@ namespace Virgo
 
                         cmd.Parameters.Add(new SQLiteParameter("startDate", fromDate));
                         cmd.Parameters.Add(new SQLiteParameter("endDate"  , toDate));
+
+                        //ステータス指定時のみ追加
+                        if (statusCode == 1 || statusCode == 2)
+                        {
+                            sql.AppendLine(" AND [to_work] = @status");
+                            cmd.Parameters.Add(new SQLiteParameter("status", statusCode));
+                        }
 
                         cmd.CommandText = sql.ToString();
                         SQLiteDataReader reader = cmd.ExecuteReader();

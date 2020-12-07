@@ -36,15 +36,19 @@
             this.ToDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ResultDataGridView = new System.Windows.Forms.DataGridView();
-            this.Label2 = new System.Windows.Forms.Label();
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Label2 = new System.Windows.Forms.Label();
+            this.StatusComboBox = new System.Windows.Forms.ComboBox();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.SearchGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchGroupBox
             // 
+            this.SearchGroupBox.Controls.Add(this.StatusLabel);
+            this.SearchGroupBox.Controls.Add(this.StatusComboBox);
             this.SearchGroupBox.Controls.Add(this.FromToLabel);
             this.SearchGroupBox.Controls.Add(this.SearchButton);
             this.SearchGroupBox.Controls.Add(this.Label1);
@@ -62,7 +66,7 @@
             // FromToLabel
             // 
             this.FromToLabel.AutoSize = true;
-            this.FromToLabel.Location = new System.Drawing.Point(56, 58);
+            this.FromToLabel.Location = new System.Drawing.Point(56, 43);
             this.FromToLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.FromToLabel.Name = "FromToLabel";
             this.FromToLabel.Size = new System.Drawing.Size(106, 24);
@@ -71,7 +75,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(745, 88);
+            this.SearchButton.Location = new System.Drawing.Point(745, 131);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(163, 46);
@@ -83,7 +87,7 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(351, 98);
+            this.Label1.Location = new System.Drawing.Point(351, 83);
             this.Label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(34, 24);
@@ -92,7 +96,7 @@
             // 
             // ToDateTimePicker
             // 
-            this.ToDateTimePicker.Location = new System.Drawing.Point(401, 88);
+            this.ToDateTimePicker.Location = new System.Drawing.Point(401, 73);
             this.ToDateTimePicker.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.ToDateTimePicker.Name = "ToDateTimePicker";
             this.ToDateTimePicker.Size = new System.Drawing.Size(273, 31);
@@ -100,7 +104,7 @@
             // 
             // FromDateTimePicker
             // 
-            this.FromDateTimePicker.Location = new System.Drawing.Point(61, 88);
+            this.FromDateTimePicker.Location = new System.Drawing.Point(61, 73);
             this.FromDateTimePicker.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.FromDateTimePicker.Name = "FromDateTimePicker";
             this.FromDateTimePicker.Size = new System.Drawing.Size(273, 31);
@@ -127,16 +131,6 @@
             this.ResultDataGridView.Size = new System.Drawing.Size(964, 704);
             this.ResultDataGridView.TabIndex = 3;
             // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(26, 296);
-            this.Label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(106, 24);
-            this.Label2.TabIndex = 4;
-            this.Label2.Text = "検索結果";
-            // 
             // RecordDate
             // 
             this.RecordDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -156,6 +150,35 @@
             this.ToWork.Name = "ToWork";
             this.ToWork.ReadOnly = true;
             this.ToWork.Width = 163;
+            // 
+            // Label2
+            // 
+            this.Label2.AutoSize = true;
+            this.Label2.Location = new System.Drawing.Point(26, 296);
+            this.Label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(106, 24);
+            this.Label2.TabIndex = 4;
+            this.Label2.Text = "検索結果";
+            // 
+            // StatusComboBox
+            // 
+            this.StatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StatusComboBox.FormattingEnabled = true;
+            this.StatusComboBox.Location = new System.Drawing.Point(745, 72);
+            this.StatusComboBox.Name = "StatusComboBox";
+            this.StatusComboBox.Size = new System.Drawing.Size(163, 32);
+            this.StatusComboBox.TabIndex = 5;
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(741, 43);
+            this.StatusLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(118, 24);
+            this.StatusLabel.TabIndex = 6;
+            this.StatusLabel.Text = "出勤/退勤";
             // 
             // SearchForm
             // 
@@ -191,5 +214,7 @@
         private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
+        private System.Windows.Forms.Label StatusLabel;
+        private System.Windows.Forms.ComboBox StatusComboBox;
     }
 }

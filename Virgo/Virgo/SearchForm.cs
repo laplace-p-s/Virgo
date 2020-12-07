@@ -22,7 +22,11 @@ namespace Virgo
 
         private void SearchForm_Load(object sender, EventArgs e)
         {
-
+            //ステータス選択肢のセット
+            this.StatusComboBox.Items.Add("(指定なし)");
+            this.StatusComboBox.Items.Add("出勤");
+            this.StatusComboBox.Items.Add("退勤");
+            this.StatusComboBox.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -42,6 +46,19 @@ namespace Virgo
             //検索条件の取得
             DateTime searchFormDate = FromDateTimePicker.Value;
             DateTime searchToDate   = ToDateTimePicker.Value;
+            String searchStatus = this.StatusComboBox.SelectedItem.ToString();
+
+            //ステータスのコード変換
+            //TODO:コード変換はcommonなり別クラスに分ける
+            int searchStatusCode = 0;
+            if (searchStatus == "出勤")
+            {
+                searchStatusCode = 1;
+            }
+            else if (searchStatus == "退勤")
+            {
+                searchStatusCode = 2;
+            }
 
             //FromToの整合性チェック
 
@@ -49,7 +66,7 @@ namespace Virgo
             List<DaoAttendance> daoAttendanceList = new List<DaoAttendance>();
             if (errMes == "")
             {
-                errMes = DaoAttendance.SelectFromTo(ref daoAttendanceList, searchFormDate, searchToDate);
+                errMes = DaoAttendance.SelectFromTo(ref daoAttendanceList, searchFormDate, searchToDate, searchStatusCode);
             }
             //検索結果処理
             if (errMes == "")
