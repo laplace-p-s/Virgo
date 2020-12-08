@@ -108,7 +108,7 @@ namespace Virgo
         {
             string errMes = "";
             DaoAttendance daoAttendance = new DaoAttendance();
-            daoAttendance.recordDate = recordDateTime.ToString();
+            daoAttendance.recordDate = recordDateTime.ToString("yyyy/MM/dd HH:mm:ss");
             daoAttendance.toWork = status;
             errMes = daoAttendance.Insert();
             if (errMes != "")
