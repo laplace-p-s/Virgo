@@ -23,6 +23,7 @@ namespace Virgo
         private void SearchForm_Load(object sender, EventArgs e)
         {
             //ステータス選択肢のセット
+            this.FromDateTimePicker.Value = this.FromDateTimePicker.Value.AddMonths(-1);
             this.StatusComboBox.Items.Add("(指定なし)");
             this.StatusComboBox.Items.Add("出勤");
             this.StatusComboBox.Items.Add("退勤");
