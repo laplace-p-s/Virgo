@@ -191,5 +191,10 @@ namespace Virgo
         {
             MessageLabel.Text = "";
         }
+
+        private void SettingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }
