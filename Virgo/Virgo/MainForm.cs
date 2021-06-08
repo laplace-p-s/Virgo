@@ -194,7 +194,8 @@ namespace Virgo
 
         private void SettingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
+            Form form = new SettingsForm();
+            form.ShowDialog();
         }
     }
 }
