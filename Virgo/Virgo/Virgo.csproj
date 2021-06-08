@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Common.cs" />
     <Compile Include="Dao\DaoAttendance.cs" />
+    <Compile Include="Dao\DaoSettings.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +77,7 @@
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setting.cs" />
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>

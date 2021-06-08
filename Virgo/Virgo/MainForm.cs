@@ -56,6 +56,7 @@ namespace Virgo
         {
             string errMes = "";
             errMes = DaoAttendance.Setup();
+            if (errMes == "") DaoSettings.Setup();
             if (errMes != "")
             {
                 MessageBox.Show(errMes);
