@@ -71,6 +71,24 @@ namespace Virgo
 
         }
 
+        private void LastMonthButton_Click(object sender, EventArgs e)
+        {
+            string errMes = "";
+            //現在日時を取得
+            DateTime now = DateTime.Now;
+            //セット用変数に目的値を格納
+            DateTime fDate = new DateTime(now.Year, now.Month - 1, 1);
+            DateTime tDate = fDate.AddMonths(1).AddDays(-1); //月末をセット
+            //コントロールに値をセット
+            this.FromDateTimePicker.Value = fDate;
+            this.ToDateTimePicker.Value = tDate;
+            //エラーメッセージ
+            if (errMes != "")
+            {
+                MessageBox.Show(errMes, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         /// <summary>
         /// DataGridViewに受け取ったリストを反映する
         /// </summary>

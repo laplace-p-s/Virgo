@@ -41,12 +41,14 @@
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Label2 = new System.Windows.Forms.Label();
+            this.LastMonthButton = new System.Windows.Forms.Button();
             this.SearchGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchGroupBox
             // 
+            this.SearchGroupBox.Controls.Add(this.LastMonthButton);
             this.SearchGroupBox.Controls.Add(this.StatusLabel);
             this.SearchGroupBox.Controls.Add(this.StatusComboBox);
             this.SearchGroupBox.Controls.Add(this.FromToLabel);
@@ -171,6 +173,16 @@
             this.Label2.TabIndex = 4;
             this.Label2.Text = "検索結果";
             // 
+            // LastMonthButton
+            // 
+            this.LastMonthButton.Location = new System.Drawing.Point(28, 66);
+            this.LastMonthButton.Name = "LastMonthButton";
+            this.LastMonthButton.Size = new System.Drawing.Size(75, 23);
+            this.LastMonthButton.TabIndex = 7;
+            this.LastMonthButton.Text = "先月セット";
+            this.LastMonthButton.UseVisualStyleBackColor = true;
+            this.LastMonthButton.Click += new System.EventHandler(this.LastMonthButton_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -207,5 +219,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.ComboBox StatusComboBox;
+        private System.Windows.Forms.Button LastMonthButton;
     }
 }
