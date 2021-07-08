@@ -16,5 +16,21 @@ namespace Virgo
         {
             InitializeComponent();
         }
+
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+            //再起動確認ダイアログ
+            DialogResult result = MessageBox.Show(
+                "設定を反映するためにアプリケーションを再起動します。よろしいですか？",
+                "設定の反映",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.OK)
+            {
+                // 設定を反映(DBに書き込み)した後にアプリケーションを再起動
+                Application.Restart();
+            }
+        }
     }
 }

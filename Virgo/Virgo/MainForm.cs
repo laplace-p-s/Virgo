@@ -14,7 +14,7 @@ namespace Virgo
     public partial class MainForm : Form
     {
         private DataTable Table;
-        private Setting Setting; //設定値保持用の変数 TODO:グローバルにするか検討
+        private Setting Setting; //設定値保持用の変数
 
         public MainForm()
         {

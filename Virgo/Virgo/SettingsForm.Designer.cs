@@ -43,6 +43,7 @@
             this.ApplyButton.TabIndex = 0;
             this.ApplyButton.Text = "適用";
             this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // ResetButton
             // 
