@@ -12,6 +12,9 @@ namespace Virgo
         private const string DB_FILE_NAME = "virgo_settings.db";
         private static string TABLE_NAME = "Settings";
 
+        private string name;
+        private string param;
+
         public DaoSettings()
         {
             //コンストラクタ
@@ -31,7 +34,7 @@ namespace Virgo
                         sql.AppendLine("CREATE TABLE IF NOT EXISTS " + TABLE_NAME);
                         sql.AppendLine("(");
                         sql.AppendLine(" name TEXT,");
-                        sql.AppendLine(" param INTEGER");
+                        sql.AppendLine(" param TEXT");
                         sql.AppendLine(")");
 
                         cmd.CommandText = sql.ToString();
