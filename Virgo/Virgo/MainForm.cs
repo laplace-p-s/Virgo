@@ -14,11 +14,13 @@ namespace Virgo
     public partial class MainForm : Form
     {
         private DataTable Table;
+        private Setting Setting; //設定値保持用の変数 TODO:グローバルにするか検討
 
         public MainForm()
         {
             InitializeComponent();
             DBSetup();
+            SettingsSetup();
             InitDataTable();
             CountTimer.Start();
         }
@@ -47,6 +49,15 @@ namespace Virgo
         private void FinishWorkButton_Click(object sender, EventArgs e)
         {
             RecordWorkTime(DateTime.Now, 2);
+        }
+
+        /// <summary>
+        /// 設定の読み込み
+        /// Settingインスタンスの生成
+        /// </summary>
+        private void SettingsSetup()
+        {
+            this.Setting = new Setting();
         }
 
         /// <summary>
