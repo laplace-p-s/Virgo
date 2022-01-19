@@ -167,7 +167,7 @@
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
             this.MainMenuStrip.Padding = new System.Windows.Forms.Padding(13, 4, 0, 4);
-            this.MainMenuStrip.Size = new System.Drawing.Size(800, 44);
+            this.MainMenuStrip.Size = new System.Drawing.Size(800, 46);
             this.MainMenuStrip.TabIndex = 0;
             this.MainMenuStrip.Text = "menuStrip1";
             // 
@@ -180,7 +180,7 @@
             this.toolStripSeparator1,
             this.QuitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 36);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 38);
             this.FileToolStripMenuItem.Text = "ファイル";
             // 
             // SearchToolStripMenuItem
@@ -221,25 +221,25 @@
             this.toolStripSeparator3,
             this.AboutToolStripMenuItem});
             this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
-            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 36);
+            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 38);
             this.OptionToolStripMenuItem.Text = "オプション";
             // 
             // SettingToolStripMenuItem
             // 
-            this.SettingToolStripMenuItem.Enabled = false;
             this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
-            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(283, 44);
-            this.SettingToolStripMenuItem.Text = "設定(開発中)";
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.SettingToolStripMenuItem.Text = "設定";
+            this.SettingToolStripMenuItem.Click += new System.EventHandler(this.SettingToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(280, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(356, 6);
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(283, 44);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.AboutToolStripMenuItem.Text = "About Virgo";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 

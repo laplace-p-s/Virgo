@@ -14,11 +14,13 @@ namespace Virgo
     public partial class MainForm : Form
     {
         private DataTable Table;
+        private Setting Setting; //設定値保持用の変数
 
         public MainForm()
         {
             InitializeComponent();
             DBSetup();
+            SettingsSetup();
             InitDataTable();
             CountTimer.Start();
         }
@@ -50,12 +52,22 @@ namespace Virgo
         }
 
         /// <summary>
+        /// 設定の読み込み
+        /// Settingインスタンスの生成
+        /// </summary>
+        private void SettingsSetup()
+        {
+            this.Setting = new Setting();
+        }
+
+        /// <summary>
         /// DBの初期セットアップを行う
         /// </summary>
         private void DBSetup()
         {
             string errMes = "";
             errMes = DaoAttendance.Setup();
+            if (errMes == "") DaoSettings.Setup();
             if (errMes != "")
             {
                 MessageBox.Show(errMes);
@@ -190,6 +202,12 @@ namespace Virgo
         private void MessageLabel_Click(object sender, EventArgs e)
         {
             MessageLabel.Text = "";
+        }
+
+        private void SettingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = new SettingsForm();
+            form.ShowDialog();
         }
     }
 }
