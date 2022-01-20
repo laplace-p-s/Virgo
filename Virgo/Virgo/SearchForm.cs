@@ -77,7 +77,20 @@ namespace Virgo
             //現在日時を取得
             DateTime now = DateTime.Now;
             //セット用変数に目的値を格納
-            DateTime fDate = new DateTime(now.Year, now.Month - 1, 1);
+            int tgtYear = now.Year;
+            int tgtMonth = now.Month;
+            if (tgtMonth == 1)
+            {
+                //年明け
+                tgtYear--;
+                tgtMonth = 12;
+            }
+            else
+            {
+                //通常
+                tgtMonth--;
+            }
+            DateTime fDate = new DateTime(tgtYear, tgtMonth, 1);
             DateTime tDate = fDate.AddMonths(1).AddDays(-1); //月末をセット
             //コントロールに値をセット
             this.FromDateTimePicker.Value = fDate;
