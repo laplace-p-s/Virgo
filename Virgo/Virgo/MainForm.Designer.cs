@@ -226,10 +226,10 @@
             // 
             // SettingToolStripMenuItem
             // 
-            this.SettingToolStripMenuItem.Enabled = false;
+            this.SettingToolStripMenuItem.Enabled = true;
             this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
             this.SettingToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.SettingToolStripMenuItem.Text = "設定(開発中)";
+            this.SettingToolStripMenuItem.Text = "設定";
             this.SettingToolStripMenuItem.Click += new System.EventHandler(this.SettingToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
