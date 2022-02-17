@@ -52,6 +52,8 @@
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LastActionLabel = new System.Windows.Forms.Label();
             this.MessageLabel = new System.Windows.Forms.Label();
+            this.CommentTextBox = new System.Windows.Forms.TextBox();
+            this.CommentLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Lasted20DataGridView)).BeginInit();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -60,10 +62,9 @@
             // 
             this.TimerDayLabel.AutoSize = true;
             this.TimerDayLabel.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TimerDayLabel.Location = new System.Drawing.Point(184, 102);
-            this.TimerDayLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.TimerDayLabel.Location = new System.Drawing.Point(85, 51);
             this.TimerDayLabel.Name = "TimerDayLabel";
-            this.TimerDayLabel.Size = new System.Drawing.Size(395, 38);
+            this.TimerDayLabel.Size = new System.Drawing.Size(197, 19);
             this.TimerDayLabel.TabIndex = 0;
             this.TimerDayLabel.Text = "yyyy年 MM月 dd日 (月)";
             // 
@@ -71,10 +72,9 @@
             // 
             this.TimerTimeLabel.AutoSize = true;
             this.TimerTimeLabel.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TimerTimeLabel.Location = new System.Drawing.Point(288, 168);
-            this.TimerTimeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.TimerTimeLabel.Location = new System.Drawing.Point(133, 84);
             this.TimerTimeLabel.Name = "TimerTimeLabel";
-            this.TimerTimeLabel.Size = new System.Drawing.Size(178, 42);
+            this.TimerTimeLabel.Size = new System.Drawing.Size(90, 21);
             this.TimerTimeLabel.TabIndex = 1;
             this.TimerTimeLabel.Text = "hh:mm:ss";
             // 
@@ -85,10 +85,9 @@
             // StartWorkButton
             // 
             this.StartWorkButton.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.StartWorkButton.Location = new System.Drawing.Point(93, 274);
-            this.StartWorkButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.StartWorkButton.Location = new System.Drawing.Point(43, 137);
             this.StartWorkButton.Name = "StartWorkButton";
-            this.StartWorkButton.Size = new System.Drawing.Size(258, 104);
+            this.StartWorkButton.Size = new System.Drawing.Size(119, 52);
             this.StartWorkButton.TabIndex = 1;
             this.StartWorkButton.Text = "出勤";
             this.StartWorkButton.UseVisualStyleBackColor = true;
@@ -97,10 +96,9 @@
             // FinishWorkButton
             // 
             this.FinishWorkButton.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FinishWorkButton.Location = new System.Drawing.Point(440, 274);
-            this.FinishWorkButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.FinishWorkButton.Location = new System.Drawing.Point(203, 137);
             this.FinishWorkButton.Name = "FinishWorkButton";
-            this.FinishWorkButton.Size = new System.Drawing.Size(258, 104);
+            this.FinishWorkButton.Size = new System.Drawing.Size(119, 52);
             this.FinishWorkButton.TabIndex = 2;
             this.FinishWorkButton.Text = "退勤";
             this.FinishWorkButton.UseVisualStyleBackColor = true;
@@ -116,15 +114,14 @@
             this.Lasted20DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordDate,
             this.ToWork});
-            this.Lasted20DataGridView.Location = new System.Drawing.Point(26, 462);
-            this.Lasted20DataGridView.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.Lasted20DataGridView.Location = new System.Drawing.Point(12, 251);
             this.Lasted20DataGridView.MultiSelect = false;
             this.Lasted20DataGridView.Name = "Lasted20DataGridView";
             this.Lasted20DataGridView.ReadOnly = true;
             this.Lasted20DataGridView.RowHeadersVisible = false;
             this.Lasted20DataGridView.RowHeadersWidth = 82;
             this.Lasted20DataGridView.RowTemplate.Height = 21;
-            this.Lasted20DataGridView.Size = new System.Drawing.Size(748, 288);
+            this.Lasted20DataGridView.Size = new System.Drawing.Size(345, 124);
             this.Lasted20DataGridView.TabIndex = 3;
             // 
             // RecordDate
@@ -135,7 +132,7 @@
             this.RecordDate.MinimumWidth = 10;
             this.RecordDate.Name = "RecordDate";
             this.RecordDate.ReadOnly = true;
-            this.RecordDate.Width = 151;
+            this.RecordDate.Width = 78;
             // 
             // ToWork
             // 
@@ -145,29 +142,26 @@
             this.ToWork.MinimumWidth = 10;
             this.ToWork.Name = "ToWork";
             this.ToWork.ReadOnly = true;
-            this.ToWork.Width = 163;
+            this.ToWork.Width = 84;
             // 
             // Lasted20Label
             // 
             this.Lasted20Label.AutoSize = true;
-            this.Lasted20Label.Location = new System.Drawing.Point(26, 426);
-            this.Lasted20Label.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.Lasted20Label.Location = new System.Drawing.Point(12, 235);
             this.Lasted20Label.Name = "Lasted20Label";
-            this.Lasted20Label.Size = new System.Drawing.Size(174, 24);
+            this.Lasted20Label.Size = new System.Drawing.Size(87, 12);
             this.Lasted20Label.TabIndex = 4;
             this.Lasted20Label.Text = "最近20件の登録";
             // 
             // MainMenuStrip
             // 
-            this.MainMenuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MainMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
             this.OptionToolStripMenuItem});
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
-            this.MainMenuStrip.Padding = new System.Windows.Forms.Padding(13, 4, 0, 4);
-            this.MainMenuStrip.Size = new System.Drawing.Size(800, 46);
+            this.MainMenuStrip.Size = new System.Drawing.Size(369, 24);
             this.MainMenuStrip.TabIndex = 0;
             this.MainMenuStrip.Text = "menuStrip1";
             // 
@@ -180,37 +174,37 @@
             this.toolStripSeparator1,
             this.QuitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(103, 38);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.FileToolStripMenuItem.Text = "ファイル";
             // 
             // SearchToolStripMenuItem
             // 
             this.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem";
-            this.SearchToolStripMenuItem.Size = new System.Drawing.Size(341, 44);
+            this.SearchToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.SearchToolStripMenuItem.Text = "検索";
             this.SearchToolStripMenuItem.Click += new System.EventHandler(this.SearchToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(338, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(168, 6);
             // 
             // ExportToolStripMenuItem
             // 
             this.ExportToolStripMenuItem.Enabled = false;
             this.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem";
-            this.ExportToolStripMenuItem.Size = new System.Drawing.Size(341, 44);
+            this.ExportToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.ExportToolStripMenuItem.Text = "エクスポート(開発中)";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(338, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(168, 6);
             // 
             // QuitToolStripMenuItem
             // 
             this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
-            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(341, 44);
+            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.QuitToolStripMenuItem.Text = "終了";
             this.QuitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -221,52 +215,73 @@
             this.toolStripSeparator3,
             this.AboutToolStripMenuItem});
             this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
-            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(123, 38);
+            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.OptionToolStripMenuItem.Text = "オプション";
             // 
             // SettingToolStripMenuItem
             // 
             this.SettingToolStripMenuItem.Enabled = false;
             this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
-            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.SettingToolStripMenuItem.Text = "設定(開発中)";
             this.SettingToolStripMenuItem.Click += new System.EventHandler(this.SettingToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(356, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(139, 6);
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.AboutToolStripMenuItem.Text = "About Virgo";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // LastActionLabel
             // 
             this.LastActionLabel.AutoSize = true;
-            this.LastActionLabel.Location = new System.Drawing.Point(30, 776);
+            this.LastActionLabel.Location = new System.Drawing.Point(14, 388);
+            this.LastActionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LastActionLabel.Name = "LastActionLabel";
-            this.LastActionLabel.Size = new System.Drawing.Size(513, 24);
+            this.LastActionLabel.Size = new System.Drawing.Size(262, 12);
             this.LastActionLabel.TabIndex = 5;
             this.LastActionLabel.Text = "最終更新：yyyy年 MM月 dd日(月) hh:mm:ss | 出勤";
             // 
             // MessageLabel
             // 
             this.MessageLabel.AutoSize = true;
-            this.MessageLabel.Location = new System.Drawing.Point(30, 832);
+            this.MessageLabel.Location = new System.Drawing.Point(14, 416);
+            this.MessageLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(0, 24);
+            this.MessageLabel.Size = new System.Drawing.Size(0, 12);
             this.MessageLabel.TabIndex = 6;
             this.MessageLabel.Click += new System.EventHandler(this.MessageLabel_Click);
             // 
+            // CommentTextBox
+            // 
+            this.CommentTextBox.Location = new System.Drawing.Point(120, 200);
+            this.CommentTextBox.MaxLength = 20;
+            this.CommentTextBox.Name = "CommentTextBox";
+            this.CommentTextBox.Size = new System.Drawing.Size(202, 19);
+            this.CommentTextBox.TabIndex = 7;
+            // 
+            // CommentLabel
+            // 
+            this.CommentLabel.AutoSize = true;
+            this.CommentLabel.Location = new System.Drawing.Point(41, 203);
+            this.CommentLabel.Name = "CommentLabel";
+            this.CommentLabel.Size = new System.Drawing.Size(76, 12);
+            this.CommentLabel.TabIndex = 8;
+            this.CommentLabel.Text = "コメント(任意) :";
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 892);
+            this.ClientSize = new System.Drawing.Size(369, 446);
+            this.Controls.Add(this.CommentLabel);
+            this.Controls.Add(this.CommentTextBox);
             this.Controls.Add(this.MessageLabel);
             this.Controls.Add(this.LastActionLabel);
             this.Controls.Add(this.Lasted20Label);
@@ -278,7 +293,7 @@
             this.Controls.Add(this.MainMenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Virgo";
@@ -316,6 +331,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
         private System.Windows.Forms.Label LastActionLabel;
         private System.Windows.Forms.Label MessageLabel;
+        private System.Windows.Forms.TextBox CommentTextBox;
+        private System.Windows.Forms.Label CommentLabel;
     }
 }
 
