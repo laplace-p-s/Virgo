@@ -14,6 +14,7 @@ namespace Virgo
 
         public string recordDate;
         public long   toWork;
+        public string comment;
 
         public DaoAttendance()
         {
@@ -89,6 +90,7 @@ namespace Virgo
                             DaoAttendance attendance = new DaoAttendance();
                             attendance.recordDate      = reader.GetFieldValue<string>(reader.GetOrdinal("record_date"));
                             attendance.toWork          = reader.GetFieldValue<long>  (reader.GetOrdinal("to_work"));
+                            attendance.comment         = reader.GetFieldValue<string>(reader.GetOrdinal("comment"));
 
                             daoAttendanceList.Add(attendance);
                         }
@@ -148,6 +150,7 @@ namespace Virgo
                             DaoAttendance attendance = new DaoAttendance();
                             attendance.recordDate      = reader.GetFieldValue<string>(reader.GetOrdinal("record_date"));
                             attendance.toWork          = reader.GetFieldValue<long>  (reader.GetOrdinal("to_work"));
+                            attendance.comment         = reader.GetFieldValue<string>(reader.GetOrdinal("comment"));
 
                             daoAttendanceList.Add(attendance);
                         }
@@ -181,16 +184,19 @@ namespace Virgo
                         sql.AppendLine("INSERT INTO " + TABLE_NAME);
                         sql.AppendLine("(");
                         sql.AppendLine(" record_date,");
-                        sql.AppendLine(" to_work");
+                        sql.AppendLine(" to_work, ");
+                        sql.AppendLine(" comment");
                         sql.AppendLine(")");
                         sql.AppendLine("VALUES");
                         sql.AppendLine("(");
                         sql.AppendLine(" @RecordDate,");
-                        sql.AppendLine(" @ToWork");
+                        sql.AppendLine(" @ToWork, ");
+                        sql.AppendLine(" @Comment");
                         sql.AppendLine(")");
 
                         cmd.Parameters.Add(new SQLiteParameter("RecordDate"     , recordDate));
                         cmd.Parameters.Add(new SQLiteParameter("ToWork"         , toWork));
+                        cmd.Parameters.Add(new SQLiteParameter("Comment"        , comment));
 
                         cmd.CommandText = sql.ToString();
                         cmd.ExecuteNonQuery();

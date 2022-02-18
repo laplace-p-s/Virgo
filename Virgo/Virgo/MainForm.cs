@@ -43,12 +43,12 @@ namespace Virgo
 
         private void StartWorkButton_Click(object sender, EventArgs e)
         {
-            RecordWorkTime(DateTime.Now, 1);
+            RecordWorkTime(DateTime.Now, 1, CommentTextBox.Text);
         }
 
         private void FinishWorkButton_Click(object sender, EventArgs e)
         {
-            RecordWorkTime(DateTime.Now, 2);
+            RecordWorkTime(DateTime.Now, 2, CommentTextBox.Text);
         }
 
         /// <summary>
@@ -82,6 +82,7 @@ namespace Virgo
             Table = new DataTable();
             Table.Columns.Add("RecordDate"     , typeof(string));
             Table.Columns.Add("ToWork"         , typeof(string));
+            Table.Columns.Add("Comment"        , typeof(string));
             Lasted20DataGridView.DataSource = Table;
         }
 
@@ -116,12 +117,14 @@ namespace Virgo
         /// </summary>
         /// <param name="recordDateTime">記録対象日時</param>
         /// <param name="status">出勤(1)/退勤(2)</param>
-        private void RecordWorkTime(DateTime recordDateTime, int status)
+        /// <param name="comment">コメント文字列</param>
+        private void RecordWorkTime(DateTime recordDateTime, int status, string comment)
         {
             string errMes = "";
             DaoAttendance daoAttendance = new DaoAttendance();
             daoAttendance.recordDate = recordDateTime.ToString("yyyy/MM/dd HH:mm:ss");
             daoAttendance.toWork = status;
+            daoAttendance.comment = comment;
             errMes = daoAttendance.Insert();
             if (errMes != "")
             {
@@ -146,6 +149,7 @@ namespace Virgo
                 DataRow row = Table.NewRow();
                 row["RecordDate"]      = attendance.recordDate;
                 row["ToWork"]          = GetRecordStatus(attendance.toWork);
+                row["Comment"]         = attendance.comment;
                 Table.Rows.Add(row);
             }
         }
