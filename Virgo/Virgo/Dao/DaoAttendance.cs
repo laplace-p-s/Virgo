@@ -38,7 +38,8 @@ namespace Virgo
                         sql.AppendLine("CREATE TABLE IF NOT EXISTS " + TABLE_NAME);
                         sql.AppendLine("(");
                         sql.AppendLine(" record_date TEXT,");
-                        sql.AppendLine(" to_work INTEGER");
+                        sql.AppendLine(" to_work INTEGER,");
+                        sql.AppendLine(" comment TEXT");
                         sql.AppendLine(")");
 
                         cmd.CommandText = sql.ToString();
