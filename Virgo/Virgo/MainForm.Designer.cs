@@ -289,7 +289,7 @@
             // 
             // Comment
             // 
-            this.Comment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Comment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Comment.DataPropertyName = "Comment";
             this.Comment.HeaderText = "コメント";
             this.Comment.MinimumWidth = 10;
