@@ -133,7 +133,8 @@ namespace Virgo
             else
             {
                 MessageLabel.Text = "登録を完了しました。 ( " + recordDateTime.ToLongTimeString() + " )";
-                GetLastedRecord();                
+                CommentTextBox.Text = ""; //コメント入力欄の初期化
+                GetLastedRecord();
             }
         }
 
