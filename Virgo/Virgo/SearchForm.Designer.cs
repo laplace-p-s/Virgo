@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchForm));
             this.SearchGroupBox = new System.Windows.Forms.GroupBox();
+            this.ThisMonthButton = new System.Windows.Forms.Button();
             this.LastMonthButton = new System.Windows.Forms.Button();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.StatusComboBox = new System.Windows.Forms.ComboBox();
@@ -39,10 +40,10 @@
             this.ToDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ResultDataGridView = new System.Windows.Forms.DataGridView();
+            this.Label2 = new System.Windows.Forms.Label();
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.ThisMonthButton = new System.Windows.Forms.Button();
+            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +65,16 @@
             this.SearchGroupBox.TabIndex = 1;
             this.SearchGroupBox.TabStop = false;
             this.SearchGroupBox.Text = "検索";
+            // 
+            // ThisMonthButton
+            // 
+            this.ThisMonthButton.Location = new System.Drawing.Point(118, 66);
+            this.ThisMonthButton.Name = "ThisMonthButton";
+            this.ThisMonthButton.Size = new System.Drawing.Size(75, 23);
+            this.ThisMonthButton.TabIndex = 8;
+            this.ThisMonthButton.Text = "今月セット";
+            this.ThisMonthButton.UseVisualStyleBackColor = true;
+            this.ThisMonthButton.Click += new System.EventHandler(this.ThisMonthButton_Click);
             // 
             // LastMonthButton
             // 
@@ -145,7 +156,8 @@
             this.ResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordDate,
-            this.ToWork});
+            this.ToWork,
+            this.Comment});
             this.ResultDataGridView.Location = new System.Drawing.Point(12, 166);
             this.ResultDataGridView.MultiSelect = false;
             this.ResultDataGridView.Name = "ResultDataGridView";
@@ -155,6 +167,15 @@
             this.ResultDataGridView.RowTemplate.Height = 21;
             this.ResultDataGridView.Size = new System.Drawing.Size(445, 352);
             this.ResultDataGridView.TabIndex = 3;
+            // 
+            // Label2
+            // 
+            this.Label2.AutoSize = true;
+            this.Label2.Location = new System.Drawing.Point(12, 148);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(53, 12);
+            this.Label2.TabIndex = 4;
+            this.Label2.Text = "検索結果";
             // 
             // RecordDate
             // 
@@ -176,24 +197,15 @@
             this.ToWork.ReadOnly = true;
             this.ToWork.Width = 84;
             // 
-            // Label2
+            // Comment
             // 
-            this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(12, 148);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(53, 12);
-            this.Label2.TabIndex = 4;
-            this.Label2.Text = "検索結果";
-            // 
-            // ThisMonthButton
-            // 
-            this.ThisMonthButton.Location = new System.Drawing.Point(118, 66);
-            this.ThisMonthButton.Name = "ThisMonthButton";
-            this.ThisMonthButton.Size = new System.Drawing.Size(75, 23);
-            this.ThisMonthButton.TabIndex = 8;
-            this.ThisMonthButton.Text = "今月セット";
-            this.ThisMonthButton.UseVisualStyleBackColor = true;
-            this.ThisMonthButton.Click += new System.EventHandler(this.ThisMonthButton_Click);
+            this.Comment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Comment.DataPropertyName = "Comment";
+            this.Comment.HeaderText = "コメント";
+            this.Comment.MinimumWidth = 10;
+            this.Comment.Name = "Comment";
+            this.Comment.ReadOnly = true;
+            this.Comment.Width = 63;
             // 
             // SearchForm
             // 
@@ -227,11 +239,12 @@
         private System.Windows.Forms.DateTimePicker FromDateTimePicker;
         private System.Windows.Forms.DataGridView ResultDataGridView;
         private System.Windows.Forms.Label Label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.ComboBox StatusComboBox;
         private System.Windows.Forms.Button LastMonthButton;
         private System.Windows.Forms.Button ThisMonthButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToWork;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comment;
     }
 }
