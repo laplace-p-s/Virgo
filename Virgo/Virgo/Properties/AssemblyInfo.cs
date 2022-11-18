@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Virgo")]
-[assembly: AssemblyCopyright("Copyright ©  2019-2022 laplace_p_s LaplaceLab.")]
+[assembly: AssemblyCopyright("Copyright ©  2019 laplace_p_s LaplaceLab.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
