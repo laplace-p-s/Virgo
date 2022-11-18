@@ -49,5 +49,47 @@ namespace Virgo
 
             return errMes;
         }
+
+        /// <summary>
+        /// 設定データを全て取得
+        /// </summary>
+        /// <param name="daoSettingsList">結果受け取りリスト</param>
+        /// <returns>エラーメッセージ 正常終了の場合空文字</returns>
+        public static string SelectAll(ref List<DaoSettings> daoSettingsList)
+        {
+            string errMes = "";
+            try
+            {
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=" + DB_FILE_NAME))
+                {
+                    con.Open();
+                    using (SQLiteCommand cmd = con.CreateCommand())
+                    {
+                        StringBuilder sql = new StringBuilder();
+                        sql.AppendLine("SELECT");
+                        sql.AppendLine(" *");
+                        sql.AppendLine("FROM " + TABLE_NAME);
+
+                        cmd.CommandText = sql.ToString();
+                        SQLiteDataReader reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            DaoSettings settings = new DaoSettings();
+                            settings.name  = reader.GetFieldValue<string>(reader.GetOrdinal("name"));
+                            settings.param = reader.GetFieldValue<string>(reader.GetOrdinal("param"));
+
+                            daoSettingsList.Add(settings);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                errMes = e.ToString();
+            }
+
+            return errMes;
+        }
     }
 }
