@@ -38,6 +38,7 @@ namespace Virgo
             Table = new DataTable();
             Table.Columns.Add("RecordDate", typeof(string));
             Table.Columns.Add("ToWork", typeof(string));
+            Table.Columns.Add("Comment", typeof(string));
             ResultDataGridView.DataSource = Table;
         }
 
@@ -132,6 +133,7 @@ namespace Virgo
                 DataRow row = Table.NewRow();
                 row["RecordDate"]      = attendance.recordDate;
                 row["ToWork"]          = GetRecordStatus(attendance.toWork);
+                row["Comment"]         = attendance.comment;
                 Table.Rows.Add(row);
             }
         }
