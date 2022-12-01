@@ -131,7 +131,8 @@ namespace Virgo
             foreach (DaoAttendance attendance in daoAttendanceList)
             {
                 DataRow row = Table.NewRow();
-                row["RecordDate"]      = attendance.recordDate;
+                DateTime recordDateTime = DateTime.ParseExact(attendance.recordDate, "yyyy/MM/dd HH:mm:ss", null); //曜日を扱うためにDateTime型へ変換
+                row["RecordDate"]      = recordDateTime.ToString("yyyy/MM/dd (ddd) HH:mm:ss");
                 row["ToWork"]          = GetRecordStatus(attendance.toWork);
                 row["Comment"]         = attendance.comment;
                 Table.Rows.Add(row);
